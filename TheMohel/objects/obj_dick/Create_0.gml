@@ -1,0 +1,14 @@
+horizontalSpeed = 2;
+verticalSpeed = 0;
+grv = 0.3; //putting grv instead of "gravity to bypass GM's built in gravity;
+moveSpeed = 2;
+stopSpeed = 0;
+walkSpeed = 2;
+jumpSpeed = -8;
+currentSprite = spr_dick;
+previousSprite = spr_dick;
+hitBoxOffset = 35;
+isDead = false;
+readyForSelfie = false;
+hitBox = instance_create_layer(x + (hitBoxOffset * sign(horizontalSpeed)), y, "Dicks", obj_dick_hitBox);
+alarm[0] = random_range(120, 600);
