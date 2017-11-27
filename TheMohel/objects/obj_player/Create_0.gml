@@ -9,3 +9,5 @@ currentSprite = spr_player;
 previousSprite = spr_player;
 hitBoxOffset = 35;
 playerHit = false;
+Frustration = 0;
+gameOver = false;

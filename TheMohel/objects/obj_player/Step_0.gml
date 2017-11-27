@@ -1,17 +1,28 @@
 //Get player movement
-key_left = keyboard_check(ord("A")); //will be 1 if pressed 0 if not.
-key_right = keyboard_check(ord("D"));// will be 1 if pressed 0 if not.
-key_jump = keyboard_check_pressed(ord("W"));
+if(Frustration >= 10) gameOver = true;
+if(!gameOver)
+{
+	key_left = keyboard_check(ord("A")); //will be 1 if pressed 0 if not.
+	key_right = keyboard_check(ord("D"));// will be 1 if pressed 0 if not.
+	key_jump = keyboard_check_pressed(ord("W"));
+}
 
 //calculate movement
 var move = key_right - key_left; //will return either 1 or -1 if one key pressed, and 0 if neither or both
 horizontalSpeed = move * moveSpeed; //because of move, we'll either get a negative or positive and move
 verticalSpeed = verticalSpeed + grv; //in GM, the higher the number, the lower you are.
+
 if(place_meeting(x, y + 1, obj_wall)) && (key_jump)//if we're on the floor and we're clicking the jump keep
 {
 	verticalSpeed = jumpSpeed;
 }
-else if(playerHit) verticalSpeed = jumpSpeed;
+
+if(playerHit)
+{
+	 playerHit = false;
+	 verticalSpeed = -15;
+	 horizontalSpeed = 10 * image_xscale;
+}
 
 
 //horizontal collision

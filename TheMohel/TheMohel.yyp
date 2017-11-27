@@ -31,6 +31,14 @@
     },
     "resources": [
         {
+            "Key": "01384de7-90c8-4e01-9707-f1f918530d10",
+            "Value": {
+                "id": "8527b9d8-22e3-44bb-b80f-22ae16642ad6",
+                "resourcePath": "sprites\\spr_dick_selfie\\spr_dick_selfie.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "07d5dc2d-531c-4584-9d81-231d76e14556",
             "Value": {
                 "id": "d93e83b9-2718-4a75-8896-6840191c648e",
@@ -215,14 +223,6 @@
             }
         },
         {
-            "Key": "b0d129f3-634c-46a0-a91d-a71592668b79",
-            "Value": {
-                "id": "0bbb364b-05c9-472a-8739-4dd8203c614a",
-                "resourcePath": "sprites\\spr_dick_selfie\\spr_dick_selfie.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "b3223ffa-f33f-4231-bac9-82114e8ca8b3",
             "Value": {
                 "id": "80624e90-ea37-45da-b9bd-ba382fa89294",
@@ -319,9 +319,9 @@
             }
         },
         {
-            "Key": "fd7c9f4a-38de-49b0-aa50-2b096f7e2010",
+            "Key": "ff529f71-59ec-470b-b9e6-7df286c19080",
             "Value": {
-                "id": "a400a65f-a413-4c85-84f8-6951d874e674",
+                "id": "5feb6475-ec5b-4174-97fd-29fc67488229",
                 "resourcePath": "sprites\\spr_dick_hitBox\\spr_dick_hitBox.yy",
                 "resourceType": "GMSprite"
             }
