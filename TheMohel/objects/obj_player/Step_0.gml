@@ -1,6 +1,7 @@
 //Get player movement
 if(Frustration >= 5) gameOver = true;
-if(!gameOver)
+if(dicksCut >= 35) gameWin = true;
+if(!gameOver) && (!gameWin)
 {
 	key_left = keyboard_check(ord("A")); //will be 1 if pressed 0 if not.
 	key_right= keyboard_check(ord("D"));// will be 1 if pressed 0 if not.
@@ -9,14 +10,17 @@ if(!gameOver)
 else
 {
 	horizontalSpeed = -moveSpeed;
-	if(place_meeting(x + horizontalSpeed, y, obj_wall)) //place_meeting checks if there WILL be a collision
+	if(place_meeting(x + horizontalSpeed, y, obj_wall)) && jumpCount < 2 //place_meeting checks if there WILL be a collision
 	{
 		verticalSpeed = jumpSpeed;
+		jumpCount += 1;
 	}
+	jumpCount = 0;
 	verticalSpeed += grv;
-	if(x < room_width)
+	if(x < 0)
 	{
-		show_debug_message("Off The screen");
+		if(gameOver) room_goto(loseRoom);
+		else if(gameWin) room_goto(winRoom);
 	}
 }
 

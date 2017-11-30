@@ -10,5 +10,6 @@ previousSprite = spr_dick;
 hitBoxOffset = 35;
 isDead = false;
 readyForSelfie = false;
+scoreAdded = false;
 hitBox = instance_create_layer(x + (hitBoxOffset * sign(horizontalSpeed)), y, "Dicks", obj_dick_hitBox);
 alarm[0] = random_range(120, 360);

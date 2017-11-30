@@ -74,4 +74,12 @@ if(!isDead)
 	}
 	if(horizontalSpeed != 0) image_xscale = sign(horizontalSpeed); //flip the sprite based on the horizontal speed
 }
-else sprite_index = spr_dick_die
+else 
+{
+	if(!scoreAdded)
+	{
+		scoreAdded = true;
+		with(obj_player) dicksCut += 1;
+	}
+	sprite_index = spr_dick_die
+}

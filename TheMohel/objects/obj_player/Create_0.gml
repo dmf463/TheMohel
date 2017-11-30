@@ -11,3 +11,6 @@ hitBoxOffset = 35;
 playerHit = false;
 Frustration = 0;
 gameOver = false;
+gameWin = false;
+dicksCut = 0;
+jumpCount = 0;

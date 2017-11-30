@@ -1,6 +1,13 @@
 with(obj_player)
 {
-	playerHit = true;
-	Frustration += 1;
+	if(!gameOver)
+	{
+		playerHit = true;
+		Frustration += 1;
+	}
+}
+with(obj_dickPicsRecieved)
+{
+	pics += 1;
 }
 instance_destroy();
