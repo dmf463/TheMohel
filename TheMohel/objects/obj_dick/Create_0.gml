@@ -13,3 +13,5 @@ readyForSelfie = false;
 scoreAdded = false;
 hitBox = instance_create_layer(x + (hitBoxOffset * sign(horizontalSpeed)), y, "Dicks", obj_dick_hitBox);
 alarm[0] = random_range(120, 360);
+hp = 1;
+hit = false;

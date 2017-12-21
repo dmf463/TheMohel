@@ -4,6 +4,8 @@ with(obj_player)
 	{
 		playerHit = true;
 		Frustration += 1;
+		moveSpeed -= 1;
+		walkSpeed -= 1;
 	}
 }
 with(obj_dickPicsRecieved)

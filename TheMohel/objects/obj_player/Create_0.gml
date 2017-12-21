@@ -14,5 +14,6 @@ gameOver = false;
 gameWin = false;
 dicksCut = 0;
 jumpCount = 0;
+hasControl = true;
 audio_stop_all();
 audio_play_sound(sound0, 0, true);

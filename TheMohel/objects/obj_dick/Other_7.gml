@@ -5,6 +5,11 @@ if(sprite_index == spr_dick_die)
 }
 if(sprite_index == spr_dick_selfie)
 {
-	horizontalSpeed = -horizontalSpeed;
+	horizontalSpeed = horizontalSpeed;
+	currentSprite = spr_dick_walk;
+}
+if(sprite_index == spr_dick_flash)
+{
+	horizontalSpeed = horizontalSpeed;
 	currentSprite = spr_dick_walk;
 }

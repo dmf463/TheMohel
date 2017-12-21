@@ -1,5 +1,5 @@
 
-if(!isDead)
+if(hp > 0)
 {
 	//dick Movement
 	verticalSpeed = verticalSpeed + grv; //in GM, the higher the number, the lower you are.
@@ -29,7 +29,6 @@ if(!isDead)
 	y = y + verticalSpeed;
 
 	//Animations: currentSprite and previousSprites are just holders
-
 	if(currentSprite != spr_dick_selfie) && (instance_exists(hitBox))
 	{
 		instance_destroy(hitBox);
@@ -52,6 +51,15 @@ if(!isDead)
 			horizontalSpeed = stopSpeed;
 			currentSprite = spr_dick_selfie;
 			hitBox = instance_create_layer(x + (hitBoxOffset * sign(horizontalSpeed)), y, "Dicks", obj_dick_hitBox)
+		    sprite_index = currentSprite; 
+		}
+		else if(hit && !readyForSelfie)
+		{
+			hit = false;
+		    previousSprite = currentSprite;
+			image_index = 0; //image_index sets the frame of the animation
+			horizontalSpeed = stopSpeed;
+			currentSprite = spr_dick_flash;
 		    sprite_index = currentSprite; 
 		}
 		else
@@ -79,7 +87,12 @@ else
 	if(!scoreAdded)
 	{
 		scoreAdded = true;
-		with(obj_player) dicksCut += 1;
+		with(obj_player)
+		{
+			dicksCut += 1;
+			moveSpeed += 1;
+			walkSpeed += 1;
+		}
 	}
 	sprite_index = spr_dick_die
 }

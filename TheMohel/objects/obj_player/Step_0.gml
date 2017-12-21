@@ -1,26 +1,39 @@
 //Get player movement
-if(Frustration >= 5) gameOver = true;
+if(Frustration >= 20) gameOver = true;
 if(dicksCut >= 35) gameWin = true;
-if(!gameOver) && (!gameWin)
+if(keyboard_check(vk_lshift))
 {
-	key_left = keyboard_check(ord("A")); //will be 1 if pressed 0 if not.
-	key_right= keyboard_check(ord("D"));// will be 1 if pressed 0 if not.
-	key_jump = keyboard_check_pressed(ord("W"));
+	 moveSpeed = moveSpeed * 2;
 }
 else
 {
-	horizontalSpeed = -moveSpeed;
-	if(place_meeting(x + horizontalSpeed, y, obj_wall)) && jumpCount < 2 //place_meeting checks if there WILL be a collision
+	moveSpeed = walkSpeed;
+}
+
+
+if(hasControl)
+{
+	if(!gameOver) && (!gameWin)
 	{
-		verticalSpeed = jumpSpeed;
-		jumpCount += 1;
+		key_left = keyboard_check(ord("A")); //will be 1 if pressed 0 if not.
+		key_right= keyboard_check(ord("D"));// will be 1 if pressed 0 if not.
+		key_jump = keyboard_check_pressed(ord("W"));
 	}
-	jumpCount = 0;
-	verticalSpeed += grv;
-	if(x < 0)
+	else
 	{
-		if(gameOver) room_goto(loseRoom);
-		else if(gameWin) room_goto(winRoom);
+		horizontalSpeed = moveSpeed * 2;
+		if(place_meeting(x + horizontalSpeed, y, obj_wall)) && jumpCount < 2 //place_meeting checks if there WILL be a collision
+		{
+			verticalSpeed = jumpSpeed;
+			jumpCount += 1;
+		}
+		jumpCount = 0;
+		verticalSpeed += grv;
+		if(x < 0)
+		{
+			if(gameOver) room_goto(loseRoom);
+			else if(gameWin) room_goto(winRoom);
+		}
 	}
 }
 

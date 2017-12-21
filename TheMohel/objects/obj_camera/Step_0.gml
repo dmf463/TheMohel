@@ -14,3 +14,8 @@ y = clamp(y, view_height_half, room_height - view_height_half); // same as above
 
 //update camera position
 camera_set_view_pos(cam, x - view_width_half, y - view_height_half);
+
+if(layer_exists("Canabalt"))
+{
+	layer_x("Canabalt", x / 2);
+}
